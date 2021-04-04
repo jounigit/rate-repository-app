@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="84b24b45-fe84-4760-ab6a-e3a7a81018cd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,15 +42,15 @@
       <screen x="0" y="27" width="1600" height="873" />
     </state>
     <state x="164" y="265" width="587" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1600.873@0.27.1600.873" timestamp="1617443047644" />
-    <state x="100" y="127" width="1400" height="673" key="AVDManager" timestamp="1617441698229">
+    <state x="100" y="127" width="1400" height="673" key="AVDManager" timestamp="1617529942265">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state x="100" y="127" width="1400" height="673" key="AVDManager/0.27.1600.873@0.27.1600.873" timestamp="1617441698229" />
-    <state x="82" y="61" width="1022" height="737" key="SettingsEditor" timestamp="1617439435163">
+    <state x="100" y="127" width="1400" height="673" key="AVDManager/0.27.1600.873@0.27.1600.873" timestamp="1617529942265" />
+    <state x="82" y="61" width="1022" height="737" key="SettingsEditor" timestamp="1617529842034">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
     <state x="82" y="61" width="1022" height="737" key="SettingsEditor/0.27.1600.873/1600.0.1920.1080@0.27.1600.873" timestamp="1617370935918" />
-    <state x="82" y="61" key="SettingsEditor/0.27.1600.873@0.27.1600.873" timestamp="1617439435163" />
+    <state x="82" y="61" width="1022" height="737" key="SettingsEditor/0.27.1600.873@0.27.1600.873" timestamp="1617529842034" />
     <state x="571" y="378" width="457" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1617441191229">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
