@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     flexShrink: 1,
+    height: '100%',
     backgroundColor: theme.colors.mainBackground
   },
 });
