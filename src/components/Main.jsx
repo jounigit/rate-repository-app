@@ -6,6 +6,8 @@ import RepositoryList from './RepositoryList';
 import SignIn from './SignIn';
 import AppBar from './AppBar'
 import theme from '../theme'
+import { Platform } from "react-native";
+//import ButtonSystem from './ButtonSystem';
 
 const styles = StyleSheet.create({
   container: {
@@ -17,6 +19,7 @@ const styles = StyleSheet.create({
 });
 
 const Main = () => {
+   console.log('## Platform: ', Platform.OS);
   return (
     <View style={styles.container}>
       <AppBar />

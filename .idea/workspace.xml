@@ -20,11 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84b24b45-fe84-4760-ab6a-e3a7a81018cd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Fonts.android.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Fonts.ios.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Fonts.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FormikTextInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormikTextInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignIn.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Text.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Text.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,10 +84,10 @@
       <screen x="0" y="27" width="1600" height="873" />
     </state>
     <state x="164" y="265" width="587" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1600.873@0.27.1600.873" timestamp="1617443047644" />
-    <state x="133" y="161" width="1400" height="673" key="AVDManager" timestamp="1617621124555">
+    <state x="133" y="161" width="1400" height="673" key="AVDManager" timestamp="1617712749207">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state x="133" y="161" width="1400" height="673" key="AVDManager/0.27.1600.873/1600.0.1920.1080@0.27.1600.873" timestamp="1617621124555" />
+    <state x="133" y="161" width="1400" height="673" key="AVDManager/0.27.1600.873/1600.0.1920.1080@0.27.1600.873" timestamp="1617712749207" />
     <state x="100" y="127" width="1400" height="673" key="AVDManager/0.27.1600.873@0.27.1600.873" timestamp="1617529942265" />
     <state x="82" y="61" width="1022" height="737" key="SettingsEditor" timestamp="1617617429165">
       <screen x="0" y="27" width="1600" height="873" />

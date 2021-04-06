@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     //  flex: 1,
     //  flexDirection: "row",
     //  justifyContent: "space-between",
+    height: 100,
     backgroundColor: theme.colors.background,
     padding: 20
   },
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
 const AppBar = () => {
   return (
   <View style={styles.container}>
-    <ScrollView horizontal>
+    <ScrollView horizontal style={{paddingTop: 40}}>
         <View style={styles.flexItem}>
             <AppBarTab />
         </View>
