@@ -3,16 +3,17 @@ import { View, StyleSheet, Pressable } from 'react-native';
 import { Link } from "react-router-native";
 import Text from './Text'
 
-const AppBarTab = () => {
+const AppBarTabSignIn = () => {
   return (
   <>
     <Pressable onPress={() => {} }>
-        <Link to="/">
-            <Text color="white" fontWeight="bold">Repositories</Text>
+        <Link to="/signin">
+            <Text color="white" fontWeight="bold">Sign in</Text>
         </Link>
+
      </Pressable>
   </>
   )
 };
 
-export default AppBarTab;
+export default AppBarTabSignIn;
