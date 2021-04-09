@@ -6,9 +6,6 @@ import theme from '../theme';
 
 const styles = StyleSheet.create({
   container: {
-    //  flex: 1,
-    //  flexDirection: "row",
-    //  justifyContent: "space-between",
     height: 100,
     backgroundColor: theme.colors.background,
     padding: 20

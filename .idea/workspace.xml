@@ -20,7 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84b24b45-fe84-4760-ab6a-e3a7a81018cd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/contexts/AuthStorageContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useAuthStorage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignIn.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useRepositories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useRepositories.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/useSignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useSignIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/apolloClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/apolloClient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

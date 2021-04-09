@@ -8,7 +8,7 @@ const useRepositories = () => {
   });
   let repositories;
   console.log('## REP query:: -loading: ', loading, ' -data: ', data)
-  //if (loading) return null;
+
     if (error) return `Error! ${error}`;
 
     if (data) {

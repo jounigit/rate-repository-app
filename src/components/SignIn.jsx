@@ -6,6 +6,8 @@ import FormikTextInput from './FormikTextInput'
 import theme from '../theme';
 
 import useSignIn from '../hooks/useSignIn';
+import useAuthStorage from '../hooks/useAuthStorage';
+import { useHistory } from "react-router-dom";
 
 import Text from './Text';
 
@@ -55,16 +57,16 @@ const validationSchema = yup.object().shape({
 });
 
 const SignIn = () => {
+    const authStorage = useAuthStorage();
     const [signIn] = useSignIn();
+    const history = useHistory();
 
   const onSubmit = async (values) => {
     const { username, password } = values;
-    console.log('## Sign form: ', username, ' - ', password)
     try {
       const { data } = await signIn({ username, password });
-      console.log('# signin data: ', data);
-      console.log('# signin data token: ', data.authorize);
-      console.log('# signin data token: ', data.authorize.accessToken);
+      //console.log('# Uusi Main token: ', await authStorage.getAccessToken());
+      history.push("/");
     } catch (e) {
       console.log(e);
     }
