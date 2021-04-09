@@ -7,7 +7,7 @@ import SignIn from './SignIn';
 import AppBar from './AppBar'
 import theme from '../theme'
 import { Platform } from "react-native";
-//import ButtonSystem from './ButtonSystem';
+import AuthStorage from '../utils/authStorage'
 
 const styles = StyleSheet.create({
   container: {
@@ -19,7 +19,23 @@ const styles = StyleSheet.create({
 });
 
 const Main = () => {
-   console.log('## Platform: ', Platform.OS);
+
+    const doToken = async () => {
+    const authUser = new AuthStorage();
+      console.log('# Uusi token 1: ', uusiToken);
+      await authUser.setAccessToken('jokutoken');
+
+      const uusiToken = await authUser.getAccessToken()
+
+      console.log('# Uusi token: ', uusiToken);
+
+      await authUser.removeAccessToken();
+      const poistettu = await authUser.getAccessToken()
+      console.log('# Uusi token nyt: ', poistettu);
+    };
+
+    doToken();
+   //console.log('## Platform: ', Platform.OS);
   return (
     <View style={styles.container}>
       <AppBar />

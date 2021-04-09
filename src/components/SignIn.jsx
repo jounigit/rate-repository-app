@@ -62,7 +62,9 @@ const SignIn = () => {
     console.log('## Sign form: ', username, ' - ', password)
     try {
       const { data } = await signIn({ username, password });
-      console.log(data);
+      console.log('# signin data: ', data);
+      console.log('# signin data token: ', data.authorize);
+      console.log('# signin data token: ', data.authorize.accessToken);
     } catch (e) {
       console.log(e);
     }
