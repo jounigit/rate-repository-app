@@ -65,7 +65,7 @@ const SignIn = () => {
     const { username, password } = values;
     try {
       const { data } = await signIn({ username, password });
-      //console.log('# Uusi Main token: ', await authStorage.getAccessToken());
+      console.log('# Uusi Main token: ', await authStorage.getAccessToken());
       history.push("/");
     } catch (e) {
       console.log(e);
