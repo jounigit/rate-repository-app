@@ -21,9 +21,16 @@
   <component name="ChangeListManager">
     <list default="true" id="84b24b45-fe84-4760-ab6a-e3a7a81018cd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AppBarTabSignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBarTabSignIn.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignIn.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphql/queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/queries.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/useAuthorizedUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useAuthorizedUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/useSignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useSignIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/apolloClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/apolloClient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/authStorage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/authStorage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,10 +84,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="164" y="265" width="587" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1617821018344">
+    <state x="164" y="265" width="617" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1618070998990">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state x="164" y="265" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1600.873/1600.0.1920.1080@0.27.1600.873" timestamp="1617821018344" />
+    <state x="164" y="265" width="617" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1600.873/1600.0.1920.1080@0.27.1600.873" timestamp="1618070998990" />
     <state x="164" y="265" width="587" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1600.873@0.27.1600.873" timestamp="1617443047644" />
     <state x="189" y="112" width="1400" height="673" key="AVDManager" timestamp="1617786059413">
       <screen x="0" y="27" width="1600" height="873" />

@@ -8,6 +8,8 @@ import AppBar from './AppBar'
 import theme from '../theme'
 import { Platform } from "react-native";
 
+import useAuthorizedUser from '../hooks/useAuthorizedUser';
+
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
@@ -18,7 +20,11 @@ const styles = StyleSheet.create({
 });
 
 const Main = () => {
+
+    const {data, loading, refetch} = useAuthorizedUser();
+    //const authUser = useAuthorizedUser();
    //console.log('## Platform: ', Platform.OS);
+   //{ data } console.log('# Main authuser: ', data);
   return (
     <View style={styles.container}>
       <AppBar />
