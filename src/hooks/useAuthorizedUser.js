@@ -3,9 +3,7 @@ import { useQuery } from '@apollo/client';
 import { AUTHORIZED_USER } from '../graphql/queries';
 
 const useAuthorizedUser = () => {
-  const { data: AuthUser, error, loading, refetch, networkStatus } = useQuery(AUTHORIZED_USER, {
-      notifyOnNetworkStatusChange: true,
-    });
+  const { data: AuthUser, error, loading, refetch } = useQuery(AUTHORIZED_USER);
 
    //if (loading) return null;
    if (error) return `Error! ${error}`;
