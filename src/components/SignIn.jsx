@@ -71,7 +71,7 @@ const SignIn = () => {
     try {
       const { data } = await signIn({ username, password });
       console.log('# Uusi Signin token: ', await authStorage.getAccessToken());
-      refetch();
+      //refetch();
       history.push("/");
     } catch (e) {
       console.log(e);

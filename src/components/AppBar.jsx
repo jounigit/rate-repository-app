@@ -1,32 +1,71 @@
 import React from 'react';
-import { View, StyleSheet, ScrollView } from 'react-native';
-import AppBarTab from './AppBarTab'
-import AppBarTabSignIn from './AppBarTabSignIn'
+import { View, ScrollView, Pressable, StyleSheet } from 'react-native';
+import Constants from 'expo-constants';
+import { Link } from 'react-router-native';
+
+import useAuthStorage from '../hooks/useAuthStorage';
+import useAuthorizedUser from '../hooks/useAuthorizedUser';
+
 import theme from '../theme';
+import Text from './Text';
 
 const styles = StyleSheet.create({
   container: {
-    height: 100,
-    backgroundColor: theme.colors.background,
-    padding: 20
+    paddingTop: Constants.statusBarHeight,
+    backgroundColor: theme.colors.appBarBackground,
   },
-      flexItem: {
-        marginRight: 10,
-      },
+  scrollView: {
+    flexDirection: 'row',
+  },
+  tabTouchable: {
+    flexGrow: 0,
+  },
+  tabContainer: {
+    paddingHorizontal: 15,
+    paddingVertical: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  tabText: {
+    color: 'white',
+  },
 });
 
-const AppBar = () => {
+const AppBarTab = ({ children, ...props }) => {
   return (
-  <View style={styles.container}>
-    <ScrollView horizontal style={{paddingTop: 40}}>
-        <View style={styles.flexItem}>
-            <AppBarTab />
-        </View>
-         <View style={styles.flexItem}>
-            <AppBarTabSignIn />
-        </View>
-    </ScrollView>
-   </View>
+    <Pressable style={styles.tabTouchable} {...props}>
+      <View style={styles.tabContainer}>
+        <Text fontWeight="bold" style={styles.tabText}>
+          {children}
+        </Text>
+      </View>
+    </Pressable>
+  );
+};
+
+const AppBar = () => {
+  const authStorage = useAuthStorage();
+  const { AuthUser, refetch } = useAuthorizedUser();
+
+    const remove = () => async () => {
+      await authStorage.removeAccessToken();
+      refetch();
+    }
+
+    const isAuth = (AuthUser && AuthUser.authorizedUser === null) ? false : true;
+
+  console.log('# AppBar IS authUser: ', isAuth);
+  console.log('# AppBar authUser: ', AuthUser && AuthUser.authorizedUser);
+  return (
+    <View style={styles.container}>
+      <ScrollView style={styles.scrollView} horizontal>
+        <Link to="/" component={AppBarTab}>Repositories</Link>
+        { !isAuth && <Link to="/signin" component={AppBarTab}>Sign in</Link> }
+        { isAuth && <AppBarTab onPress={remove() }>Sign out</AppBarTab> }
+
+      </ScrollView>
+    </View>
   );
 };
 
