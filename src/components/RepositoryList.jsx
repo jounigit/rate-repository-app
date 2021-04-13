@@ -21,11 +21,7 @@ export const RepositoryListContainer = ({ repositories }) => {
 const RepositoryList = () => {
   const { repositories } = useRepositories();
 
-  return (
-    <View>
-        <RepositoryListContainer repositories={repositories} />;
-    </View>
-  )
+  return <RepositoryListContainer repositories={repositories} />;
 };
 
 export default RepositoryList;

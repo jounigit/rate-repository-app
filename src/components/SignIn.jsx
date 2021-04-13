@@ -41,52 +41,50 @@ const initialValues = {
   password: '',
 };
 
+const validationSchema = yup.object().shape({
+    username: yup.string().required('Username is required'),
+    password: yup.string().required('Password is required'),
+});
+
 const SignInForm = ({ onSubmit }) => {
   return (
     <View style={styles.container}>
-      <FormikTextInput name="username" placeholder="username" />
-      <FormikTextInput name="password" placeholder="password" />
-      <Pressable style={styles.button} onPress={onSubmit}>
+      <FormikTextInput name="username" placeholder="username" testID="usernameField" />
+      <FormikTextInput name="password" placeholder="password" testID="passwordField" />
+      <Pressable style={styles.button} onPress={onSubmit} testID="submitButton">
         <Text style={styles.buttonText}>Sign in</Text>
       </Pressable>
     </View>
   );
 };
 
-const validationSchema = yup.object().shape({
-    username: yup.string().required('Username is required'),
-    password: yup.string().required('Password is required'),
-});
+export const SignInContainer = ({ handleSubmit }) => {
+  return (
+      <Formik
+          initialValues={initialValues}
+          onSubmit={handleSubmit}
+          validationSchema={validationSchema}
+      >
+        {({ handleSubmit }) => <SignInForm onSubmit={handleSubmit} />}
+      </Formik>
+  );
+};
 
 const SignIn = () => {
-    const authStorage = useAuthStorage();
     const [signIn] = useSignIn();
     const history = useHistory();
-    const {AuthUser, refetch} = useAuthorizedUser();
-
-    { AuthUser } console.log('# Signin authuser: ', AuthUser);
 
   const onSubmit = async (values) => {
     const { username, password } = values;
     try {
-      const { data } = await signIn({ username, password });
-      console.log('# Uusi Signin token: ', await authStorage.getAccessToken());
-      //refetch();
+      await signIn({ username, password });
       history.push("/");
     } catch (e) {
       console.log(e);
     }
   };
 
-  return (
-    <Formik
-        initialValues={initialValues}
-        onSubmit={onSubmit}
-        validationSchema={validationSchema}
-    >
-      {({ handleSubmit }) => <SignInForm onSubmit={handleSubmit} />}
-    </Formik>
-  );
+  return <SignInContainer handleSubmit={onSubmit} />
 };
 
 export default SignIn;

@@ -55,7 +55,6 @@ const AppBar = () => {
 
     const isAuth = (AuthUser && AuthUser.authorizedUser === null) ? false : true;
 
-  console.log('# AppBar IS authUser: ', isAuth);
   console.log('# AppBar authUser: ', AuthUser && AuthUser.authorizedUser);
   return (
     <View style={styles.container}>
