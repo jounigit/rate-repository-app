@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     padding: 15,
+    marginBottom: 10,
   },
   topContainer: {
     flexDirection: 'row',
@@ -104,7 +105,6 @@ const RepositoryItem = ({ repository, githubLink=false }) => {
     ownerAvatarUrl,
   } = repository;
 
-    console.log('## REP item: ', typeof url)
   return (
   <Pressable onPress={() => {history.push(`/repository/${id}`);} }>
 
