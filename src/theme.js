@@ -1,4 +1,5 @@
 const theme = {
+  roundness: 3,
   colors: {
     textPrimary: '#24292e',
     textSecondary: '#586069',

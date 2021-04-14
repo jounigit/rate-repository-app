@@ -3,6 +3,7 @@ import Constants from 'expo-constants';
 import { StyleSheet, View } from 'react-native';
 import { Route, Switch, Redirect } from 'react-router-native';
 import RepositoryList from './RepositoryList';
+import Repository from './Repository';
 import SignIn from './SignIn';
 import AppBar from './AppBar'
 import theme from '../theme'
@@ -25,6 +26,9 @@ const Main = () => {
       <Switch>
         <Route path="/signin" exact>
           <SignIn />
+        </Route>
+        <Route path="/repository/:id" exact>
+          <Repository />
         </Route>
         <Route path="/" exact>
             <RepositoryList />

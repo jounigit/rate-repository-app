@@ -1,5 +1,8 @@
 import React from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet,Text as NativeText, Pressable } from 'react-native';
+
+import { useHistory } from "react-router-dom";
+import * as Linking from 'expo-linking';
 
 import theme from '../theme';
 import Text from './Text';
@@ -58,6 +61,21 @@ const styles = StyleSheet.create({
     paddingVertical: 3,
     paddingHorizontal: 6,
   },
+  gitHubContainer: {
+    marginTop: 10,
+    height: 45,
+    borderRadius: theme.roundness,
+    flexDirection: 'row',
+    backgroundColor: theme.colors.primary,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  gitHubText: {
+    color: 'white',
+    backgroundColor: theme.colors.primary,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 const CountItem = ({ label, count }) => {
@@ -71,8 +89,10 @@ const CountItem = ({ label, count }) => {
   );
 };
 
-const RepositoryItem = ({ repository }) => {
+const RepositoryItem = ({ repository, githubLink=false }) => {
+  const history = useHistory();
   const {
+    id,
     fullName,
     description,
     language,
@@ -80,10 +100,14 @@ const RepositoryItem = ({ repository }) => {
     stargazersCount,
     ratingAverage,
     reviewCount,
+    url,
     ownerAvatarUrl,
   } = repository;
 
+    console.log('## REP item: ', typeof url)
   return (
+  <Pressable onPress={() => {history.push(`/repository/${id}`);} }>
+
     <View style={styles.container}>
       <View style={styles.topContainer}>
         <View style={styles.avatarContainer}>
@@ -115,8 +139,37 @@ const RepositoryItem = ({ repository }) => {
         <CountItem count={reviewCount} label="Reviews" />
         <CountItem count={ratingAverage} label="Rating" />
       </View>
+      {githubLink &&
+            <View style={styles.gitHubContainer}>
+              <Text
+                   onPress={ ()=>Linking.openURL(url) }
+                  style={styles.gitHubText}
+                  fontWeight="bold"
+                  fontSize="subheading"
+              >
+                  Open in GitHub
+              </Text>
+            </View>
+      }
     </View>
+
+
+  </Pressable>
   );
 };
 
 export default RepositoryItem;
+
+/*
+  <>
+  <View>
+  <Link to="/">Repositories</Link>
+  </View>
+  </>
+  */
+
+/*
+<Pressable onPress={<Link to="/sigin"></Link>}>
+
+   </Pressable>
+*/
