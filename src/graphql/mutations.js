@@ -15,6 +15,16 @@ export const AUTHORIZE = gql`
   ${USER_BASE_FIELDS}
 `;
 
+export const CREATE_USER = gql`
+ mutation createUser($user: CreateUserInput!) {
+    createUser(user: $user) {
+         ...userBaseFields
+    }
+  }
+
+  ${USER_BASE_FIELDS}
+`;
+
 export const CREATE_REVIEW = gql`
 mutation createReview ($review: CreateReviewInput)
     {
