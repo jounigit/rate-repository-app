@@ -33,15 +33,15 @@ const styles = StyleSheet.create({
 });
 
 const initialValues = {
-  owner: '',
-  repository: '',
+  ownerName: '',
+  repositoryName: '',
   rating: '',
-  review: ''
+  text: ''
 };
 
 const validationSchema = yup.object().shape({
-    owner: yup.string().required('Owner\'s username is a required'),
-    repository: yup.string().required('Repository\'s name is required'),
+    ownerName: yup.string().required('Owner\'s username is a required'),
+    repositoryName: yup.string().required('Repository\'s name is required'),
     rating: yup
     .number()
     .min(0)
@@ -52,10 +52,10 @@ const validationSchema = yup.object().shape({
 const ReviewForm = ({ onSubmit }) => {
   return (
     <View style={styles.container}>
-      <FormikTextInput name="owner" placeholder="Repository owner name" testID="ownerField" />
-      <FormikTextInput name="repository" placeholder="Repository name" testID="repositoryField" />
-      <FormikTextInput name="rating" placeholder="Rating between 0 and 100" testID="ratingField" />
-      <FormikTextInput name="review" placeholder="Review" multiline="true" testID="reviewField" />
+      <FormikTextInput name="ownerName" placeholder="Repository owner name" testID="ownerField" />
+      <FormikTextInput name="repositoryName" placeholder="Repository name" testID="repositoryField" />
+      <FormikTextInput type="number" name="rating" placeholder="Rating between 0 and 100" testID="ratingField" />
+      <FormikTextInput name="text" placeholder="Review" multiline="true" testID="reviewField" />
       <Pressable style={styles.button} onPress={onSubmit} testID="submitButton">
         <Text style={styles.buttonText}>Create a review</Text>
       </Pressable>
@@ -75,22 +75,44 @@ export const ReviewContainer = ({ handleSubmit }) => {
   );
 };
 
-const SignIn = () => {
-    //const [review] = useReview();
+const Review = () => {
+    const [createReview] = useReview();
     const history = useHistory();
 
   const onSubmit = async (values) => {
-    const { owner, repository, rating, review } = values;
-    console.log('#SUBMITS: ', owner,' :: ', repository,' :: ', rating,' :: ', review);
-    /*try {
-      await signIn({ username, password });
-      history.push("/");
-    } catch (e) {
-      console.log(e);
-    }*/
+    const { ownerName, repositoryName, rating, text } = values;
+    createReview({ ownerName, repositoryName, rating, text });
+
+/*    if (data && data.createReview) {
+        const id = data.createReview.repositoryId;
+        history.push(`/repository/${id}`);
+      }
+*/
   };
 
   return <ReviewContainer handleSubmit={onSubmit} />
 };
 
-export default SignIn;
+export default Review;
+
+/*
+    try {
+      const { data } = await createReview({ ownerName, repositoryName, rating, text });
+      const id = data.createReview.repositoryId;
+      history.push(`/repository/${id}`);
+
+    } catch(error){
+      console.log('#SUBMITS error: ', error.message);
+      history.push(`/`);
+    }
+
+    if (errors) {
+        console.log('#SUBMITS error: ', errors, ' :: ', errors.message);
+        history.push(`/`);
+    }
+
+    if (data && data.createReview) {
+        const id = data.createReview.repositoryId;
+        history.push(`/repository/${id}`);
+      }
+*/

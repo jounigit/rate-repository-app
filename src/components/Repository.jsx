@@ -10,6 +10,7 @@ import { format, parseISO } from 'date-fns'
 import RepositoryItem from './RepositoryItem';
 import { useParams } from 'react-router-dom'
 import { GET_REPOSITORY } from '../graphql/queries';
+import useRepository from '../hooks/useRepository';
 
 const styles = StyleSheet.create({
   container: {
@@ -105,19 +106,16 @@ const styles = StyleSheet.create({
 
 const Repository = () => {
   let { id } = useParams()
-  let repository, reviews
+  const { data, ...result } = useQuery(GET_REPOSITORY, {
+    fetchPolicy: 'cache-and-network',
+    variables: { id }
+  });
 
-    const { data, error, loading } = useQuery(GET_REPOSITORY,
-      { variables: { id } }
-    );
+  const repository = data ? data.repository : undefined
 
-    if (!data) return null;
-    if (data) {
-        repository = data.repository
-        reviews = repository.reviews
-            ? repository.reviews.edges.map((edge) => edge.node)
-            : [];
-    }
+  if (!repository) return null;
+
+   const reviews = repository.reviews ? repository.reviews.edges.map((edge) => edge.node) : [];
 
     console.log('## Repository reviews: ', reviews)
 
@@ -134,3 +132,18 @@ const Repository = () => {
 };
 
 export default Repository;
+
+/*
+    const { data, error, loading } = useQuery(GET_REPOSITORY, {
+        fetchPolicy: 'cache-and-network',
+        variables: { id }
+     });
+
+    if (!data) return null;
+    if (data) {
+        repository = data.repository
+        reviews = repository.reviews
+            ? repository.reviews.edges.map((edge) => edge.node)
+            : [];
+    }
+*/
