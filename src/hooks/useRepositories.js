@@ -2,53 +2,37 @@ import { useQuery } from '@apollo/client';
 
 import { GET_REPOSITORIES } from '../graphql/queries';
 
-const queryFn = ({ orderBy, orderDirection }) => {
-    console.log('## Repository queryFN: ', orderBy, ' :: ', orderDirection)
-   const { data, error, loading, refetch } = useQuery(GET_REPOSITORIES, {
-        fetchPolicy: 'cache-and-network',
-        variables: {
-             orderBy,
-             orderDirection
-         }
+const useRepositories = (variables) => {
+  console.log('# UseRepositories vars: ', variables)
+  const { data, loading, fetchMore, ...result } = useQuery(GET_REPOSITORIES, {
+    fetchPolicy: 'cache-and-network',
+    variables,
+  });
+
+  const handleFetchMore = () => {
+    const canFetchMore = !loading && data?.repositories.pageInfo.hasNextPage;
+
+    if (!canFetchMore) {
+      return;
+    }
+
+    fetchMore({
+      variables: {
+        after: data.repositories.pageInfo.endCursor,
+        ...variables,
+      },
     });
+  };
 
-    return { data, error, loading, refetch }
-}
+//const aa = {...result}
+  console.log('# UseRepository: ', data?.repositories)
 
-const useRepositories = ({value}) => {
-
-  let repositories, orderBy, orderDirection;
-
-    if (value==="latest") {
-          orderBy="CREATED_AT", orderDirection="DESC"
-          const { data, error, loading, refetch } = queryFn({orderBy, orderDirection})
-      if (error) return `Error! ${error}`;
-      if (data) { repositories = data.repositories }
-
-     return { repositories, loading, refetch };
-    }
-
-    if (value==="highest") {
-          orderBy="RATING_AVERAGE", orderDirection="DESC"
-          const { data, error, loading, refetch } = queryFn({orderBy, orderDirection})
-
-          if (error) return `Error! ${error}`;
-          if (data) { repositories = data.repositories }
-
-         return { repositories, loading, refetch };
-    }
-
-    if (value==="lowest") {
-          orderBy="RATING_AVERAGE", orderDirection="ASC"
-          const { data, error, loading, refetch } = queryFn({orderBy, orderDirection})
-
-          if (error) return `Error! ${error}`;
-          if (data) { repositories = data.repositories }
-
-          return { repositories, loading, refetch };
-    }
-
-  return { repositories };
+  return {
+    repositories: data?.repositories,
+    fetchMore: handleFetchMore,
+    loading,
+    ...result,
+  };
 };
 
 export default useRepositories;

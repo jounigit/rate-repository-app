@@ -9,7 +9,7 @@ import SignUp from './SignUp';
 import Review from './Review';
 import AppBar from './AppBar'
 import theme from '../theme'
-import { Platform } from "react-native";
+//import { Platform } from "react-native";
 
 const styles = StyleSheet.create({
   container: {

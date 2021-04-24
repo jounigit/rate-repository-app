@@ -20,14 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84b24b45-fe84-4760-ab6a-e3a7a81018cd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Fonts.android.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Fonts.ios.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ItemContent.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ItemDescription.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ItemImage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ItemName.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ItemStatics.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Repository.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Repository.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/RepositoryList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RepositoryList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/graphql/queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/queries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/TEMP-useRepositories.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/useRepositories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useRepositories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/apolloClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/apolloClient.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,10 +94,11 @@
     </state>
     <state x="164" y="265" width="617" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1600.873/1600.0.1920.1080@0.27.1600.873" timestamp="1618070998990" />
     <state x="164" y="265" width="587" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1600.873@0.27.1600.873" timestamp="1617443047644" />
-    <state x="189" y="112" width="1400" height="673" key="AVDManager" timestamp="1617786059413">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state x="1834" y="105" width="1680" height="833" key="AVDManager" timestamp="1618992287247">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="189" y="112" width="1400" height="673" key="AVDManager/0.27.1600.873/1600.0.1920.1080@0.27.1600.873" timestamp="1617786059413" />
+    <state x="1834" y="105" width="1680" height="833" key="AVDManager/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1618992287247" />
     <state x="100" y="127" width="1400" height="673" key="AVDManager/0.27.1600.873@0.27.1600.873" timestamp="1617529942265" />
     <state x="82" y="61" width="1022" height="737" key="SettingsEditor" timestamp="1617785930610">
       <screen x="0" y="27" width="1600" height="873" />

@@ -5,7 +5,6 @@ import { FlatList, View, StyleSheet } from 'react-native';
 import theme from '../theme';
 import Text from './Text';
 import { format, parseISO } from 'date-fns'
-//import format from 'date-fns/format'
 
 import RepositoryItem from './RepositoryItem';
 import { useParams } from 'react-router-dom'
@@ -106,27 +105,32 @@ const styles = StyleSheet.create({
 
 const Repository = () => {
   let { id } = useParams()
-  const { data, ...result } = useQuery(GET_REPOSITORY, {
-    fetchPolicy: 'cache-and-network',
-    variables: { id }
-  });
+  const variables = { id, first: 2 }
 
-  const repository = data ? data.repository : undefined
+  const { repository, fetchMore, loading } = useRepository(
+     variables
+  );
 
   if (!repository) return null;
+
+  const onEndReach = () => {
+      console.log('You have reached the end of the list');
+      fetchMore();
+  };
 
    const reviews = repository.reviews ? repository.reviews.edges.map((edge) => edge.node) : [];
 
     console.log('## Repository reviews: ', reviews)
 
-  return (
+  return ( !loading &&
       <FlatList
         data={reviews}
         renderItem={({ item }) => <ReviewItem review={item} />}
         keyExtractor={({ id }) => id}
         ListHeaderComponent={() => <RepositoryInfo repository={repository} />}
         ItemSeparatorComponent={ItemSeparator}
-        // ...
+        onEndReached={onEndReach}
+        onEndReachedThreshold={0.5}
       />
   )
 };
@@ -134,6 +138,14 @@ const Repository = () => {
 export default Repository;
 
 /*
+const { data, ...result } = useQuery(GET_REPOSITORY, {
+    fetchPolicy: 'cache-and-network',
+    variables: { id, first: 2 }
+  });
+
+  const repository = data?.repository
+
+---------------------
     const { data, error, loading } = useQuery(GET_REPOSITORY, {
         fetchPolicy: 'cache-and-network',
         variables: { id }
