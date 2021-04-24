@@ -61,6 +61,7 @@ const AppBar = () => {
       <ScrollView style={styles.scrollView} horizontal>
         <Link to="/" component={AppBarTab}>Repositories</Link>
         { isAuth && <Link to="/review" component={AppBarTab}>Create a review</Link> }
+        { isAuth && <Link to="/myreviews" component={AppBarTab}>My reviews</Link> }
         { isAuth && <AppBarTab onPress={remove() }>Sign out</AppBarTab> }
         { !isAuth && <Link to="/signin" component={AppBarTab}>Sign in</Link> }
         { !isAuth && <Link to="/signup" component={AppBarTab}>Sign up</Link> }

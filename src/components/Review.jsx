@@ -83,36 +83,9 @@ const Review = () => {
     const { ownerName, repositoryName, rating, text } = values;
     createReview({ ownerName, repositoryName, rating, text });
 
-/*    if (data && data.createReview) {
-        const id = data.createReview.repositoryId;
-        history.push(`/repository/${id}`);
-      }
-*/
   };
 
   return <ReviewContainer handleSubmit={onSubmit} />
 };
 
 export default Review;
-
-/*
-    try {
-      const { data } = await createReview({ ownerName, repositoryName, rating, text });
-      const id = data.createReview.repositoryId;
-      history.push(`/repository/${id}`);
-
-    } catch(error){
-      console.log('#SUBMITS error: ', error.message);
-      history.push(`/`);
-    }
-
-    if (errors) {
-        console.log('#SUBMITS error: ', errors, ' :: ', errors.message);
-        history.push(`/`);
-    }
-
-    if (data && data.createReview) {
-        const id = data.createReview.repositoryId;
-        history.push(`/repository/${id}`);
-      }
-*/

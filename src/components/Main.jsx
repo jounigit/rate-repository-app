@@ -7,6 +7,7 @@ import Repository from './Repository';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Review from './Review';
+import MyReview from './MyReview';
 import AppBar from './AppBar'
 import theme from '../theme'
 //import { Platform } from "react-native";
@@ -34,6 +35,9 @@ const Main = () => {
         </Route>
         <Route path="/review" exact>
           <Review />
+        </Route>
+        <Route path="/myreviews" exact>
+          <MyReview />
         </Route>
         <Route path="/repository/:id" exact>
           <Repository />
