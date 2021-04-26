@@ -1,5 +1,4 @@
 import { useMutation } from '@apollo/client';
-import { useApolloClient } from '@apollo/client';
 import { useHistory } from "react-router-dom";
 
 import { CREATE_REVIEW } from '../graphql/mutations';

@@ -42,7 +42,7 @@ export const RepositoryListContainer = ({
      }
      ItemSeparatorComponent={ItemSeparator}
      onEndReached={onEndReach}
-     onEndReachedThreshold={0.5}
+     onEndReachedThreshold={0.2}
     />
   );
 };
@@ -87,31 +87,3 @@ const RepositoryList = () => {
 };
 
 export default RepositoryList;
-
-/*
-         <Picker
-           selectedValue={selectedOrder}
-            style={{ height: 50 }}
-           onValueChange={(itemValue, itemIndex) =>
-             setSelectedOrder(itemValue)
-           }>
-           <Picker.Item label="Latest repositories" value="latest" />
-           <Picker.Item label="Highest rated repositories" value="highest" />
-           <Picker.Item label="Lowest rated repositories" value="lowest" />
-         </Picker>
----------------------------
-  useEffect(() => {
-     if (value==="latest") {
-        setVariables({first: 6, orderBy:"CREATED_AT", orderDirection:"DESC"});
-         //refetch({first: 4, orderBy:"CREATED_AT", orderDirection:"DESC"});
-     }
-     if (value==="lowest") {
-        setVariables({first: 6, orderBy:"RATING_AVERAGE",orderDirection:"ASC"});
-        // refetch({first: 6, orderBy:"RATING_AVERAGE",orderDirection:"ASC"});
-     }
-    if (value==="highest") {
-        setVariables({first: 6, orderBy:"RATING_AVERAGE", orderDirection:"DESC"});
-         //refetch({orderBy:"RATING_AVERAGE", orderDirection:"DESC"});
-     }
-  }, [value])
-*/

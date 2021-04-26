@@ -20,16 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84b24b45-fe84-4760-ab6a-e3a7a81018cd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/MyReview.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReviewItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useDeleteReview.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Repository.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Repository.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Review.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Review.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MyReview.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MyReview.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RepositoryList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RepositoryList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ReviewItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ReviewItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/graphql/fragments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/fragments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/queries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphql/mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/mutations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/useAuthorizedUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useAuthorizedUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useReview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useReview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +53,64 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.customizations" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="rate-repository-app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -83,30 +141,52 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2155" y="184" width="800" height="719" key="#Plugins" timestamp="1619429110336">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2155" y="184" width="800" height="719" key="#Plugins/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1619429110336" />
+    <state x="1978" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1619423712345">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1978" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1619423712345" />
     <state x="164" y="265" width="617" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1618070998990">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
     <state x="164" y="265" width="617" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1600.873/1600.0.1920.1080@0.27.1600.873" timestamp="1618070998990" />
     <state x="164" y="265" width="587" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1600.873@0.27.1600.873" timestamp="1617443047644" />
-    <state x="1834" y="105" width="1680" height="833" key="AVDManager" timestamp="1618992287247">
+    <state x="2222" y="141" width="666" height="804" key="#honor-tmp" timestamp="1619423582023">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2222" y="141" width="666" height="804" key="#honor-tmp/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1619423582023" />
+    <state x="1795" y="141" width="1680" height="833" key="AVDManager" timestamp="1619430009395">
       <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="189" y="112" width="1400" height="673" key="AVDManager/0.27.1600.873/1600.0.1920.1080@0.27.1600.873" timestamp="1617786059413" />
-    <state x="1834" y="105" width="1680" height="833" key="AVDManager/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1618992287247" />
-    <state x="100" y="127" width="1400" height="673" key="AVDManager/0.27.1600.873@0.27.1600.873" timestamp="1617529942265" />
-    <state x="82" y="61" width="1022" height="737" key="SettingsEditor" timestamp="1617785930610">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state x="1795" y="141" width="1680" height="833" key="AVDManager/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1619430009395" />
+    <state x="100" y="127" width="1400" height="673" key="AVDManager/0.27.1600.873@0.27.1600.873" timestamp="1619350551982" />
+    <state x="2301" y="272" width="428" height="512" key="AndroidProcessChooserDialog" timestamp="1619427997862">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2301" y="272" width="428" height="512" key="AndroidProcessChooserDialog/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1619427997862" />
+    <state x="2455" y="334" width="424" height="491" key="FileChooserDialogImpl" timestamp="1619419375604">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2455" y="334" width="424" height="491" key="FileChooserDialogImpl/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1619419375604" />
+    <state x="1876" y="0" width="1153" height="737" key="SettingsEditor" timestamp="1619429018106">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="82" y="61" width="1022" height="737" key="SettingsEditor/0.27.1600.873/1600.0.1920.1080@0.27.1600.873" timestamp="1617785930610" />
-    <state x="82" y="61" width="1022" height="737" key="SettingsEditor/0.27.1600.873@0.27.1600.873" timestamp="1617554388552" />
+    <state x="1876" y="0" width="1153" height="737" key="SettingsEditor/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1619429018106" />
+    <state x="230" y="27" width="1022" height="737" key="SettingsEditor/0.27.1600.873@0.27.1600.873" timestamp="1619350605609" />
     <state x="571" y="378" width="457" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1617441191229">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
     <state x="571" y="378" width="457" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1600.873@0.27.1600.873" timestamp="1617441191229" />
-    <state x="464" y="207" key="run.anything.popup" timestamp="1617440432482">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state x="2157" y="223" key="run.anything.popup" timestamp="1619415094940">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
     <state x="464" y="207" key="run.anything.popup/0.27.1600.873/1600.0.1920.1080@0.27.1600.873" timestamp="1617369576185" />
+    <state x="2157" y="223" key="run.anything.popup/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1619415094940" />
     <state x="464" y="207" key="run.anything.popup/0.27.1600.873@0.27.1600.873" timestamp="1617440432482" />
   </component>
 </project>

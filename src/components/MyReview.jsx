@@ -11,7 +11,7 @@ const ItemSeparator = () => <View style={{ height: 10, }} />;
 
 const MyReview = () => {
    const variables = { "includeReviews": true }
-  const { AuthUser, loading } = useAuthorizedUser(
+  const { AuthUser, loading, refetch } = useAuthorizedUser(
     variables
   );
 
@@ -23,9 +23,10 @@ const MyReview = () => {
 console.log('## MyReviews: ', reviews)
 
   return ( !loading &&
+
     <FlatList
       data={reviews}
-      renderItem={({ item }) => <ReviewItem review={item} myReview={true} />}
+      renderItem={({ item }) => <ReviewItem review={item} myReview={true} refetch={ refetch } />}
       keyExtractor={({ id }) => id}
       ItemSeparatorComponent={ItemSeparator}
     />

@@ -11,7 +11,7 @@ const useAuthorizedUser = (variables) => {
    //if (loading) return null;
    if (error) return `Error! ${error}`;
 
-  //console.log('## Useauthuser: ', AuthUser)
+  console.log('## Useauthuser: ', AuthUser && AuthUser.authorizedUser)
 
   return { AuthUser, loading, refetch };
 };

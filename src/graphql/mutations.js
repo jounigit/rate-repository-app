@@ -37,20 +37,8 @@ mutation createReview ($review: CreateReviewInput)
     }
 `;
 
-/*
-        id
-            user{
-          id
-          username
-        }
-        repository{
-          name
-          fullName
-        }
-        userId
-        repositoryId
-        rating
-        createdAt
-        text
-      }
-*/
+export const DELETE_REVIEW = gql`
+mutation deleteReview($id: ID!) {
+      deleteReview(id: $id)
+  }
+`;

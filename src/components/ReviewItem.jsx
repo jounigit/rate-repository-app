@@ -1,9 +1,14 @@
 import React from 'react';
 
-import { FlatList, View, StyleSheet } from 'react-native';
+import { FlatList, View, StyleSheet, Alert, Button } from 'react-native';
 import theme from '../theme';
 import Text from './Text';
 import { format, parseISO } from 'date-fns'
+
+import { useHistory } from "react-router-dom";
+import useDeleteReview from '../hooks/useDeleteReview';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,7 +23,6 @@ const styles = StyleSheet.create({
     flexGrow: 0,
     marginRight: 20,
     height: 70,
-    //backgroundColor: 'red',
   },
   ratingText: {
    color: theme.colors.primary,
@@ -51,18 +55,103 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
     separator: {
-      height: 10,
+    height: 10,
+   },
+  bottomContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+    buttonItem: {
+      height: 45,
+      flexGrow: 0,
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: theme.roundness,
+      paddingHorizontal: 35,
     },
+    buttonText: {
+      color: 'white',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    backgroundPrimary: {
+      backgroundColor: theme.colors.primary,
+    },
+    backgroundRed: {
+      backgroundColor: "red",
+    }
  });
 
-  const ReviewItem = ({ review, myReview=false }) => {
+ const ButtonItem = ({ bgColor, label, action }) => {
+   const buttonStyle = [
+     styles.buttonItem,
+     bgColor === 'red' && styles.backgroundRed,
+     bgColor === 'primary' && styles.backgroundPrimary,
+   ];
+   const buttontextStyle = [
+     styles.buttonText,
+     bgColor === 'red' && styles.backgroundRed,
+     bgColor === 'primary' && styles.backgroundPrimary,
+   ];
+   return (
+     <View style={buttonStyle}>
+       <Text
+           onPress={ action }
+           style={buttontextStyle}
+           fontWeight="bold"
+           fontSize="subheading"
+           color= 'white'
+       >
+        {label}
+       </Text>
+     </View>
+   );
+ };
+
+  const ReviewItem = ({ review, myReview=false, refetch }) => {
+  const [deleteReview] = useDeleteReview();
+  const history = useHistory();
   const { id, text, rating, createdAt, user, repository } = review
-  console.log('## ReviewItem: ', myReview)
 
   const creatingDay = format(parseISO( createdAt ), 'dd.MM.yyyy')
 
+ const goToRepository = () => history.push(`/repository/${repository.id}`)
+
+ const buttonAlert = () =>
+   confirmAlert({
+     customUI: ({ onClose }) => {
+         return (
+           <div className='custom-ui'>
+             <h1>Delete review</h1>
+             <p>Are you sure you want to delete this review?</p>
+                    <Text
+                        onPress={onClose}
+                        fontSize="subheading"
+                        color= 'primary'
+                        style={{ marginRight: 20 }}
+                    >
+                     CANCEL
+                    </Text>
+                    <Text
+                        onPress={() => {
+                              deleteReview( id );
+                              refetch({ variables: { "includeReviews": true } });
+                              onClose();
+                            }
+                        }
+                        fontSize="subheading"
+                        color= 'primary'
+                    >
+                     DELETE
+                    </Text>
+           </div>
+         );
+       }
+   });
+
     return (
         <View style={styles.container}>
+
           <View style={styles.topContainer}>
             <View style={styles.ratingContainer}>
                 <Text style={styles.ratingText}>{rating}</Text>
@@ -103,8 +192,23 @@ const styles = StyleSheet.create({
               </Text>
             </View>
           </View>
+          { myReview &&
+            <View style={styles.bottomContainer}>
+                <ButtonItem bgColor="primary" label="View repository" action={goToRepository} />
+                <ButtonItem bgColor="red" label="Delete review" action={buttonAlert} />
+
+            </View>
+          }
         </View>
     )
   };
 
   export default ReviewItem;
+
+  /*
+
+ const deleteReviewAction = () => {
+     deleteReview( id );
+     refetch({ variables: { "includeReviews": true } });
+ }
+  */
